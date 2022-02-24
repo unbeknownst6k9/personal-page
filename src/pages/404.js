@@ -1,10 +1,14 @@
 // JavaScript source code
 import React from 'react';
-import Typography from '@mui/material/Typography';
+import { Box, Typography } from '@mui/material';
+import NavBar from '../components/NavBar';
 
 function NotFoundPage() {
     return (
-        <Typography>404 page not found</Typography>
+        <Box>
+            <NavBar/>
+            <Typography>404 page not found</Typography>
+        </Box>
     );
 }
 export default NotFoundPage;
