@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -13,17 +13,17 @@ import ContactPage from './pages/Contact';
 function App() {
   return (
       <div className="App">
-          <BrowserRouter>
+          <HashRouter>
               <Routes>
-                  <Route exact path="/" element={<IndexPage />} />
-                  <Route exact path="/Archieve" element={<ArchievePage />} />
-                  <Route exact path="/About" element={<AboutPage />} />
-                  <Route exact path="/Contact" element={<ContactPage />} />
+                  <Route path="/" element={<IndexPage />} />
+                  <Route path="/Archieve" element={<ArchievePage />} />
+                  <Route path="/About" element={<AboutPage />} />
+                  <Route path="/Contact" element={<ContactPage />} />
 
-                  <Route exact path="/404" element={<NotFoundPage />} />
+                  <Route path="/404" element={<NotFoundPage />} />
                   <Route path="*" element={<Navigate replace to="/404"/>}/>
               </Routes>
-          </BrowserRouter>
+          </HashRouter>
          
     </div>
   );
