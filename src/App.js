@@ -1,26 +1,30 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import React from 'react';
-import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
 import logo from './logo.svg';
 import './App.css';
 
-const BlueBtn = styled('button')({
-    color: 'darkslategray',
-    backgroundColor: 'aliceblue',
-    padding: 8,
-    borderRadius: 4,
-});
+//Pages
+import IndexPage from './pages/Index';
+import NotFoundPage from './pages/404';
+import ArchievePage from './pages/Archieve';
+import AboutPage from './pages/About';
+import ContactPage from './pages/Contact';
 
 function App() {
   return (
       <div className="App">
-          <BlueBtn>Hello Button</BlueBtn>
-          <Button sx={{
-              color: 'black',
-              fontWeight: 'medium',
-              mx: 0.5,
-          }}>material button</Button>
-        <h1>Hello World</h1>
+          <BrowserRouter>
+              <Routes>
+                  <Route exact path="/" element={<IndexPage />} />
+                  <Route exact path="/Archieve" element={<ArchievePage />} />
+                  <Route exact path="/About" element={<AboutPage />} />
+                  <Route exact path="/Contact" element={<ContactPage />} />
+
+                  <Route exact path="/404" element={<NotFoundPage />} />
+                  <Route path="*" element={<Navigate replace to="/404"/>}/>
+              </Routes>
+          </BrowserRouter>
+         
     </div>
   );
 }
