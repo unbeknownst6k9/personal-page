@@ -1,6 +1,6 @@
 // JavaScript source code
 import React from 'react';
-import { Tabs, Tab, Box } from '@mui/material';
+import { Tabs, Tab, Box, Divider } from '@mui/material';
 
 import TabPage from './TabPage';
 
@@ -12,13 +12,14 @@ function TabPages() {
     };
 
     return (
-        <Box>
+        <Box sx={{ padding: 3 }}>
             <Box>
-                <Tabs value={value} onChange={handleChange}>
+                <Tabs variant="fullWidth" value={value} onChange={handleChange}>
                     <Tab label="Stories" />
                     <Tab label="Programming" />
                     <Tab label="Others" />
                 </Tabs>
+                <Divider/>
             </Box>
             <TabPage content="This is page 1" value={value} index={0}/>
             <TabPage content="This is page 2" value={value} index={1}/>

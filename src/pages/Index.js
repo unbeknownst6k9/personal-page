@@ -39,7 +39,6 @@ function IndexPage() {
                 fontWeight: 'medium',
                 mx: 0.5,
             }}>material button</Button>
-            <h1>Hello World</h1>
         </Box>
     );
 }
